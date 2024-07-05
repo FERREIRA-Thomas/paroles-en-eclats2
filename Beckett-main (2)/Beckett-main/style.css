@@ -1,0 +1,1616 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fefefe; 
+    font-family: 'Courrier New';
+    font-weight: 400;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 0%;
+}
+
+.blur{
+     filter: blur(4px)
+}
+
+.no-blur {
+    filter: blur(0);
+    transition: filter 0.3s ease-out;
+}
+
+.disabled {
+    pointer-events: none; /* Désactive les interactions */
+    opacity: 0.5; /* Réduit l'opacité pour indiquer visuellement que c'est désactivé */
+}
+
+#clickBlocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Transparence */
+    z-index: 3; /* Au-dessus de tout */
+    display: none; /* Masqué par défaut */
+}
+
+
+.a {
+    text-decoration: none; /* Retire le soulignement par défaut */
+    color: inherit; /* Utilise la couleur par défaut du texte */
+    cursor: pointer; /* Change le curseur en main au survol */
+}
+
+/*Titre principal*/
+.main-title {
+    position: relative;
+    top: 22px;
+    left: 67px;
+    font-family: "Courier New" ;
+    font-weight: 400;
+    font-size: 40px; 
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .main-title {
+        font-size: 35px; 
+    }
+}
+
+    /*Sous-titre*/
+.sub-title {
+    position: relative;
+    top: -7px;
+    left: 70px;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 13px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) {
+    .sub-title {
+        top: 0px;
+        font-size: 12px; 
+    }
+}
+
+
+/* Placement et taille de la vidéo */
+#video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    height: 40%;
+    z-index: 0;
+}
+
+@media (max-width: 1500px) { 
+    #video {
+        height: 30%;
+    }
+}
+
+/* ? */
+.small{
+    left: 20%;
+}
+
+
+
+/* Réglages des TRIANGLES */
+
+.triangle {
+    display : inline-block;
+ height : 0;
+ width : 0;
+ border-right : 8px solid transparent;
+ border-bottom : 14px solid rgb(168, 168, 168);
+ border-left : 8px solid transparent;
+ position: relative;
+}
+
+@media (max-width: 1500px) 
+{
+    .triangle {
+        border-right : 6px solid transparent;
+        border-bottom : 11px solid rgb(168, 168, 168);
+        border-left : 6px solid transparent;
+    }
+}
+
+
+.triangle:hover {
+    border-bottom-color: rgb(114, 114, 114); /* Changement de couleur au survol */
+}
+.triangle.active {
+    border-bottom-color: black; /* Changement de couleur au clic */
+}
+.triangle.active:hover {
+   border-bottom-color: black; /* Maintient la couleur noire au survol */
+}
+.triangle.active:active {
+    transform: rotate(35deg); /* Rotation de 35 degrés au clic */
+    transition: transform 0.3s; /* Ajout d'une transition pour l'effet de rotation */
+    border-bottom-color: black;
+}
+
+
+.paragraph.show {
+  display: block; /* show the paragraph when this class is added */
+}
+
+/* ——————————— ORIENTATION de chaque TRIANGLE ———————————————— */
+
+/* Caroline Granger et Anna Chirescu — Audio 1, 2, 3, 4, 5 */
+
+.paragraph-1{
+    position: absolute;
+    top: 26%;
+    left: 18%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-1 {
+        font-size: 13px;
+    }
+}
+
+.flexbox-1 {
+    position: absolute;
+    top: 30%;
+    left: 18%;
+  /*  transform: translate(-50%, -50%);*/
+    width: 130px;
+    height: 110px;
+    }
+
+    .triangle-1 {
+    top: 30px;
+    left: 10px;
+    transform: rotate(-20deg);
+    cursor: pointer;
+    }
+    .triangle-2{
+    top: 9px;
+    left:25px;
+    transform: rotate(20deg);
+    cursor: pointer;
+    }
+    .triangle-3{
+    top: 51px;
+    left:5px;
+    transform: rotate(-10deg);
+    cursor: pointer;
+    }
+    .triangle-4{
+    top: 28px;
+    left:12px;
+    transform: rotate(90deg);
+    cursor: pointer;
+    }
+    .triangle-5{
+    top: 76px;
+    left:-11px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    }
+
+/* Mariko Kitahara — Audio 6 */
+.paragraph-2{
+    position: absolute;
+    top: 46%;
+    left: 13%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-2 {
+        font-size: 13px;
+    }
+}
+
+.flexbox-2 {
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+}
+.triangle-6{
+    transform: rotate(-28deg);
+    cursor: pointer;
+}
+
+
+/* Federica Fratagnoli — Audio 7, 8, 9 */
+
+    .paragraph-3{
+    position: absolute;
+    top: 34%;
+    left: 120px;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+    }
+
+    @media (max-width: 1500px) 
+     {
+        .paragraph-3 {
+            font-size: 13px;
+            left: 110px;
+        }
+    }
+
+    .flexbox-3 {
+        position: absolute;
+        top: 34%;
+        left: 100px;
+        transform: translate(-50%, -50%);
+        width: 54px;
+        height: 50px;
+    }
+    .triangle-7{
+        top: 0px;
+        left:0px;
+        transform: rotate(-7deg);
+        cursor: pointer;
+    }
+    .triangle-8{
+        top: 3px;
+        left:11px;
+        transform: rotate(29deg);
+        cursor: pointer;
+    }
+    .triangle-9{
+        top: 25px;
+        left:-25px;
+        transform: rotate(-90deg);
+        cursor: pointer;
+    }
+
+
+/*////////// Geisha Fontaine — Audio 10, 11, 12, 13 ////////////*/
+
+.paragraph-4{
+    position: absolute;
+    top: 61%;
+    left: 25%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-4 {
+        font-size: 13px;
+    }
+}
+
+.flexbox-4 {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 69px;
+    height: 58px;
+}
+
+.triangle-10{
+    top: 12px;
+    left:-10px;
+    transform: rotate(-15deg);
+    cursor: pointer;
+}
+.triangle-11{
+    top: 0px;
+    left:0px;
+    transform: rotate(14deg);
+    cursor: pointer;
+}
+.triangle-12{
+    top: 25px;
+    left:-20px;
+    transform: rotate(40deg);
+    cursor: pointer;
+}
+.triangle-13{
+    top: 19px;
+    left:-15px;
+    transform: rotate(-43deg);
+    cursor: pointer;
+}
+
+
+
+/* Lulla Chourlin et Sarath Amarasingam — Audio 14, 15, 16, 17 */
+
+.paragraph-5{
+    position: absolute;
+    top: 52%;
+    left: 14%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-5 {
+        left: 12%;
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-5 {
+        top: 54%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-5 {
+        top: 56%;
+    }
+}
+
+
+.flexbox-5 {
+    position: absolute;
+    top: 46%;
+    left: 30%;
+    /*transform: translate(-50%, -50%);*/
+    width: 64px;
+    height: 64px;
+}
+
+.triangle-14{
+    top: 4px;
+    left:29px;
+    transform: rotate(-6deg);
+    cursor: pointer;
+}
+.triangle-15{
+    top: 17px;
+    left:-10px;
+    transform: rotate(-38deg);
+    cursor: pointer;
+}
+.triangle-16{
+    top: 39px;
+    left:-22px;
+    transform: rotate(-48deg);
+    cursor: pointer;
+}
+.triangle-17{
+    top: 24px;
+    left:-19px;
+    transform: rotate(5deg);
+    cursor: pointer;
+}
+
+
+/*//////// Marian del Valle, Antia Díaz Otero, Elisabeth Maesen et Barbara Manzetti — Audio 18,19 ////*/
+.paragraph-6{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-6 {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-6 {
+        top: 24%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-6 {
+        top: 23%;
+    }
+}
+
+
+.flexbox-6 {
+    position: absolute;
+    top: 32%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 42px;
+}
+
+.triangle-18{
+    top: 0px;
+    left:0px;
+    transform: rotate(26deg);
+    cursor: pointer;
+}
+.triangle-19{
+    top: 9px;
+    left:0px;
+    transform: rotate(-11deg);
+    cursor: pointer;
+}
+
+
+/* Anatoli Vlassov — Audio 20, 21, 22, 23 */
+.paragraph-7{
+    position: absolute;
+    top: 68%;
+    left: 40%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-7 {
+        font-size: 13px;
+    }
+}
+
+.flexbox-7 {
+    position: absolute;
+    top: 68%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 88px;
+    height: 70px;
+}
+
+.triangle-20{
+    top: 40px;
+    left:9px;
+    transform: rotate(-40deg);
+    cursor: pointer;
+}
+.triangle-21{
+    top: 25px;
+    left:6px;
+    transform: rotate(-30deg);
+    cursor: pointer;
+}
+.triangle-22{
+    top: 5px;
+    left:-2px;
+    transform: rotate(11deg);
+    cursor: pointer;
+}
+.triangle-23{
+    top: 0px;
+    left:0px;
+    transform: rotate(-5deg);
+    cursor: pointer;
+}
+
+
+/* Thais Meirelles Parelli — Audio 20, 21, 22, 23 */
+.paragraph-8{
+    position: absolute;
+    top: 38%;
+    right: 20%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-8 {
+        font-size: 13px;
+    }
+}
+@media (max-height: 1000px)
+{
+    .paragraph-8 {
+        top: 37%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-8 {
+        top: 36%;
+    }
+}
+
+.flexbox-8 {
+    position: absolute;
+    top: 42%;
+    right: 30%;
+   /* transform: translate(-50%, -50%);*/
+    width: 20px;
+    height: 20px;
+}
+
+.triangle-24{
+    top: 0;
+    left:0;
+    transform: rotate(-35deg);
+    cursor: pointer;
+}
+
+/* Eléa Lauret-Baussay — Audio 25, 26, 27, 28 */
+.paragraph-9{
+    position: absolute;
+    top: 15%;
+    right: 30%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-9 {
+        font-size: 13px;
+    }
+}
+@media (max-height: 1000px)
+{
+    .paragraph-9 {
+        top: 13%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-9 {
+        top: 26%;
+        right: 27%;
+    }
+}
+
+
+.flexbox-9 {
+    position: absolute;
+    top: 20%;
+    right: 38%;
+   /* transform: translate(-50%, -50%);*/
+    width: 70px;
+    height: 50px;
+}
+
+.triangle-25{
+    top: 0;
+    left:0;
+    transform: rotate(-25deg);
+    cursor: pointer;
+}
+.triangle-26{
+    top: 20px;
+    left: -7px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.triangle-27{
+    top: 10px;
+    left: -5px;
+    transform: rotate(-95deg);
+    cursor: pointer;
+}
+.triangle-28{
+    top: -5px;
+    left: 0px;
+    transform: rotate(-75deg);
+    cursor: pointer;
+}
+
+
+/* Julia Wehren — Audio 29, 30 */
+.paragraph-10{
+    position: absolute;
+    top: 27%;
+    right: 20%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) 
+{
+    .paragraph-10 {
+        font-size: 13px;
+    }
+}
+@media (max-height: 1000px)
+{
+    .paragraph-10 {
+        top: 25%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-10 {
+        top: 24%;
+    }
+}
+
+
+
+.flexbox-10 {
+    position: absolute;
+    top: 30%;
+    right: 26%;
+   /* transform: translate(-50%, -50%);*/
+    width: 40px;
+    height: 40px;
+}
+
+.triangle-29{
+    top: 0px;
+    left: 0px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.triangle-30{
+    top: 20px;
+    left: -5px;
+    transform: rotate(-15deg);
+    cursor: pointer;
+}
+
+
+/* Maëlle Rousselot et Éléonore Guérineau — Audio 31, 32 */
+.paragraph-11{
+    position: absolute;
+    top: 73%;
+    right: 20%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-11 {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-11 {
+        top: 73%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-11 {
+        top: 75%;
+    }
+}
+
+.flexbox-11 {
+    position: absolute;
+    top: 70%;
+    right: 20%;
+    /*transform: translate(-50%, -50%);*/
+    width: 40px;
+    height: 40px;
+}
+
+.triangle-31{
+    top: -15px;
+    left:5px;
+    transform: rotate(-30deg);
+    cursor: pointer;
+}
+.triangle-32{
+    top: 5px;
+    left: 10px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+
+/* Fabienne Berger et Julia Wehren — Audio 33, 34, 35, 36 */
+
+.paragraph-12{
+    position: absolute;
+    top: 54%;
+    right: 14%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) 
+{
+    .paragraph-12 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1000px) 
+{
+    .paragraph-12 {
+        right: 8%;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-12 {
+        top:53%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-12 {
+        top: 50%;
+    }
+}
+
+
+.flexbox-12 {
+    position: absolute;
+    top: 60%;
+    right: 30%;
+    /*transform: translate(-50%, -50%);*/
+    width: 50px;
+    height: 50px;
+}
+
+.triangle-33{
+    top: -25px;
+    left:5px;
+    transform: rotate(-35deg);
+    cursor: pointer;
+}
+.triangle-34{
+    top: 15px;
+    left: -5px;
+    transform: rotate(-55deg);
+    cursor: pointer;
+}
+.triangle-35{
+    top: 0px;
+    left: -35px;
+    transform: rotate(-75deg);
+    cursor: pointer;
+}
+.triangle-36{
+    top: -5px;
+    left: -20px;
+    transform: rotate(-5deg);
+    cursor: pointer;
+}
+
+
+/* Alessandra Randazzo et David Zambrano — Audio 37, 38, 39, 40 */
+
+.paragraph-13{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 13px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) 
+{
+    .paragraph-13 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1000px) 
+{
+    .paragraph-13 {
+        right: 8%;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-13 {
+        top:52%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-13 {
+        top: 54%;
+    }
+}
+
+
+.flexbox-13 {
+    position: absolute;
+    top: 45%;
+    right: 20%;
+   /* transform: translate(-50%, -50%);*/
+    width: 50px;
+    height: 50px;
+}
+
+.triangle-37{
+    top: -15px;
+    left: 5px;
+    transform: rotate(-5deg);
+    cursor: pointer;
+}
+.triangle-38{
+    top: 25px;
+    left: -5px;
+    transform: rotate(-33deg);
+    cursor: pointer;
+}
+.triangle-39{
+    top: 7px;
+    left: -5px;
+    transform: rotate(-72deg);
+    cursor: pointer;
+}
+.triangle-40{
+    top: -5px;
+    left: 0px;
+    transform: rotate(-48deg);
+    cursor: pointer;
+}
+
+
+/* Pauline Boivineau et Claire Rousier — Audio 41, 42, 43 */
+.paragraph-14{
+    position: absolute;
+    top: 56%;
+    left: 10%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) 
+{
+    .paragraph-14 {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 1000px)
+{
+    .paragraph-14 {
+        top: 56%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-14 {
+        top: 53%;
+    }
+}
+
+
+.flexbox-14 {
+    position: absolute;
+    top: 62%;
+    left: 15%;
+   /* transform: translate(-50%, -50%);*/
+    width: 50px;
+    height: 90px;
+}
+
+.triangle-41{
+    top: -10px;
+    left:10px;
+    transform: rotate(-33deg);
+    cursor: pointer;
+}
+.triangle-42{
+    top: 10px;
+    left: -0px;
+    transform: rotate(-52deg);
+    cursor: pointer;
+}
+.triangle-43{
+    top: 30px;
+    left: 0px;
+    transform: rotate(-85deg);
+    cursor: pointer;
+}
+
+
+/* Camille Casale — Audio 44, 45, 46, 47 */
+.paragraph-15{
+    position: absolute;
+    top: 70%;
+    right: 35%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+@media (max-width: 1500px) 
+{
+    .paragraph-15 {
+        font-size: 13px;
+    }
+}
+
+.flexbox-15 {
+    position: absolute;
+    top: 78%;
+    right: 40%;
+    /*transform: translate(-50%, -50%);*/
+    width: 90px;
+    height: 50px;
+}
+
+.triangle-44{
+    top: -30px;
+    left:0px;
+    transform: rotate(-35deg);
+    cursor: pointer;
+}
+.triangle-45{
+    top: -10px;
+    left: -5px;
+    transform: rotate(-15deg);
+    cursor: pointer;
+}
+.triangle-46{
+    top: 0px;
+    left: 0px;
+    transform: rotate(-85deg);
+    cursor: pointer;
+}
+.triangle-47{
+    top: -7px;
+    left: 10px;
+    transform: rotate(-55deg);
+    cursor: pointer;
+}
+
+
+/* Mathieu Bouvier— Audio 48, 49, 50, 51 */
+
+.paragraph-16{
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .paragraph-16 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1000px) 
+{
+    .paragraph-16 {
+        font-size: 13px;
+        right: 18%;
+    }
+}
+@media (max-height: 1000px)
+{
+    .paragraph-16 {
+        top: 16%;
+    }
+}
+
+@media (max-height: 700px)
+{
+    .paragraph-16 {
+        top: 16%;
+    }
+}
+
+
+.flexbox-16 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    /*transform: translate(-50%, -50%);*/
+    width: 50px;
+    height: 50px;
+}
+
+.triangle-48{
+    top: -15px;
+    left:5px;
+    transform: rotate(-5deg);
+    cursor: pointer;
+}
+.triangle-49{
+    top: 5px;
+    left: -10px;
+    transform: rotate(-25deg);
+    cursor: pointer;
+}
+.triangle-50{
+    top: 0px;
+    left: 0px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.triangle-51{
+    top: 15px;
+    left: 0px;
+    transform: rotate(-95deg);
+    cursor: pointer;
+}
+
+/*
+.flexbox-17 {
+    position: absolute;
+    top: 43%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 90px;
+}*/
+
+
+
+
+/* ———————————— description audio ——————————————— */
+
+.large-container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    bottom: 15%;
+}
+.parole-text-container {
+    position: absolute;
+    bottom: 13%;
+    margin-left: 70px;
+    width: 400px;
+    text-align: left;
+    font-family: 'Courrier New';
+    font-weight: 400;
+    font-size: 13px;
+    color: black;
+  }
+
+  @media (max-width: 1500px) 
+{
+    .parole-text-container {
+        font-size: 12px;
+        width: 300px;
+    }
+}*/
+
+/* ancien Texte de la parole 
+.parole-text-container {
+  position: absolute;
+  bottom: 13%;
+  left: 200px;
+  width: 400px;
+  transform: translateX(-50%);
+  text-align: left;
+  font-family: 'Courrier New';
+  font-weight: 400;
+  font-size: 13px;
+  color: black;
+}*/
+
+
+
+
+/* —————————————BARRE DE LECTURE ——————————— */
+
+.controls-timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Longueur et placement de la barre de lecture et de boutons */
+.controls-container {
+    position: absolute;
+    left: 70px;
+    bottom: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+
+/* LONG TIMELINE
+.controls-container {
+    position: absolute;
+    bottom: 8%;
+    left: 926px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}*/
+
+
+/*ANIMATION d'ouverture des Pannel Résumés */
+
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.slide-out {
+  animation: slideOutToRight 0.5s ease forwards;
+}
+
+.small {
+    animation: forwards;
+    width: 60%;
+    left: 30%;
+}
+
+@keyframes slideAnimation {
+    from {
+        left: 28%;
+        width: 100%;
+        transform: translateX(0%);
+    }
+    to {
+        left: 50%;
+        width: 60%;
+        transform: translateX(-83%);
+    }
+}
+/*
+.slide-timeline {
+    animation: slideAnimation 0.5s ease forwards;
+}
+*/
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in-credits {
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-out-credits {
+  animation: slideOutToLeft 0.5s ease forwards;
+}
+
+
+
+/* Barre de lecture */
+.timeline {
+    margin-left: 20px;
+    flex-grow: 1; /* La timeline prend autant d'espace disponible que possible */
+    height: 2px;
+    background-color: #fff;
+    border: 0.5px solid black;
+}
+.timeline-progress {
+    height: 100%;
+    background-color: #000;
+}
+
+
+/* Boutons de contrôle TIMELINE */
+.playbutton{
+    width: 15px;
+    cursor:pointer;
+}
+.playbutton.clicked {
+    content: url('boutons/play-button-inactive@2x.png');
+}
+
+.stop-button {
+    margin-left: 20px; /* Espacement entre la timeline et le bouton stop */
+    width: 20px;
+    cursor:pointer;
+}
+.pausebutton{
+    margin-left: 10px;
+    width: 15px;
+    cursor:pointer;
+}
+.pausebutton.clicked {
+    content: url('boutons/button_pause_active@2x.png');
+}
+.hidden {
+    display: none;
+}
+@media (max-width: 1500px) 
+{
+    .playbutton {
+        width: 10px; 
+    }
+    .pausebutton{
+        width: 10px;
+        margin-left: 6px;
+    }
+    .stop-button {
+        width: 14px;
+        margin-left: 10px;
+    }
+    .timeline {
+        margin-left: 10px;
+    }
+    .controls-container {
+        width: 300px;
+    }
+
+}
+
+
+
+
+
+/* Panneau droit — Résumé articles référents */
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 650px;
+    background: linear-gradient(rgba(78,78,78,1) 0%, rgba(0,0,0) 100%);
+    right: 0%;
+    top: 0%;
+    z-index: 1;
+}
+.panel{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    right: 10%;
+    top: 0%;
+    font-family: 'Courrier New';
+}
+.close-button {
+    margin-left: 0px; /* Espacement entre la timeline et le bouton stop */
+    margin-right: 10px;
+    margin-top: 55px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; 
+}
+.panel-title{
+    margin-top: 5%;
+    margin-bottom: 7%;
+    font-family: 'Courrier New' ;
+    letter-spacing: -1px;
+    line-height: 1em;
+    font-weight: 400 ;
+    font-size: 25px;
+    color: whitesmoke;
+}
+.panel-authors{
+    margin-top: 10px;
+    margin-bottom: 7%;
+    font-family: 'Courrier New' ;
+    letter-spacing: -0.5px;
+    font-weight: 400 ;
+    font-size: 16px;
+    color: whitesmoke;
+}
+.panel-summarytitle{
+    margin-top: 20%;
+    margin-bottom: 0%;
+    font-family: 'Courrier New' ;
+    letter-spacing: -0.5px;
+    font-weight: 400 ;
+    font-size: 16px;
+    color: whitesmoke;
+}
+.panel-summary{
+    margin-top: 5%;
+    font-family: 'Courrier New' ;
+    font-weight: 400 ;
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+#panelLink {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #303030; /* Couleur de fond gris */
+    color: #fff; /* Couleur du texte blanc */
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    transition: background-color 0.3s ease; /* Animation de transition */
+    margin-top: 0%;
+    margin-left: 180px;
+    align-items: center;
+    font-size: 13px;
+}
+#panelLink:hover {
+    background-color: #606060; /* Couleur de fond gris plus foncée au survol */
+}
+.text-integral{
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    bottom: 7%;
+
+}
+.flexbox.small{
+    left: 30%;
+}
+
+@media (max-width: 1500px) 
+{
+    .overlay{  
+        width: 500px;
+    }
+    .close-button {
+        width: 30px;
+        height: 30px;
+    }
+    .panel-title{
+        font-size: 20px; 
+    }
+
+    .panel-authors{
+        font-size: 14px; 
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .panel-summarytitle{
+        font-size: 14px; 
+        margin-top: 7%;
+        margin-bottom: 0;
+    }
+    .panel-summary {
+        font-size: 12px; 
+    }
+    #panelLink {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-left: 150px;
+    }
+
+
+}
+
+
+
+/*Titre Crédits à gauche*/
+.credit{
+    position: relative;
+    top: -10px;
+    left: 70px;
+    width: 100px;
+    cursor: pointer;
+    font-family: "Courier New";
+    font-weight: bold;
+    font-size: 13px;
+    color: #4F4F4F;
+}
+
+@media (max-width: 1500px) 
+{
+    .credit {
+        top: 0px;
+        font-size: 12px; 
+        font-weight: bold;
+    }
+}
+/*
+Titre Crédits à Droite
+
+    .credit{
+    position: relative;
+    top: -80px;
+    left: 92%;
+    cursor: pointer;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 16px;
+    color: #4F4F4F;
+}*/
+
+/* ——————————— Panneau Crédits ——————————— */
+/* Panneau gris dégradé */
+.overlay-credits{
+    position: absolute;
+   height: 100%;
+   width: 350px;
+   background: rgb(78,78,78);
+   background: linear-gradient(rgba(78,78,78,1) 0%, rgba(0,0,0,1) 100%);
+   left: 0%;
+   bottom: 0%;
+   z-index: 4;
+}
+.panel-credits{
+   position: absolute;
+   height: 100%;
+   width: 80%;
+   right: 10%;
+   top: 0%;
+   font-family: 'Courrier New';
+}
+.close-button-credits {
+   position: absolute;
+   bottom: 650px;
+   margin-left: 27px; /* Espacement entre la timeline et le bouton stop */
+   margin-right: 10px;
+   color: white;
+   width: 40px;
+   height: 40px;
+   cursor: pointer; 
+}
+
+.panel-title-credits{
+    position: absolute;
+    bottom: 530px;
+    left: 12%;
+    right: 5%;
+   font-family: "Courrier New" ;
+   font-weight: 400 ;
+   font-size: 26px;
+   color: whitesmoke;
+}
+
+.panel-summary-credits{
+    position: absolute;
+    bottom: 100px;
+    left: 12%;
+    right: 5%;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 13px;
+    color: whitesmoke;
+}
+
+@media (max-width: 1500px) 
+{
+    .panel-summary-credits{
+        font-size: 10px;
+    }
+    .panel-title-credits{
+        font-size: 18px;
+        bottom: 400px;
+    }
+    .close-button-credits {
+        bottom: 470px;
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+/* Styles pour le pop-up de bienvenue */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(104, 104, 104, 0.8); /* Arrière-plan semi-transparent blanc */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcome-popup {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+}
+
+.title-popup {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 30px;
+    color: #4F4F4F;
+}
+
+.text-popup {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-family: "Courier New";
+    font-weight: 400;
+    font-size: 13px;
+}
+
+
+button#closeWelcomePopup {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #303030;;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button#closeWelcomePopup:hover {
+  background: #606060;
+}
